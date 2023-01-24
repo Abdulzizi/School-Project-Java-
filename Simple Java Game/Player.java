@@ -16,7 +16,7 @@ class Player {
     }
     
     public void run() {
-        System.out.println(name + " is running at a speed of " + speed);
+        System.out.println(name + " Berlari Dengan kecepatan " + speed);
     }
     
     public boolean isDead() {
@@ -28,12 +28,12 @@ class Player {
     }
     
     public void attack(Player target) {
-        System.out.println(name + " is attacking " + target.name + " with damage " + attackDamage);
+        System.out.println(name + " Menyerang " + target.name + " dengan damage " + attackDamage);
         target.healthPoint -= attackDamage;
     }
     
     public void defend() {
-        System.out.println(name + " is defending with armor " + armor);
+        System.out.println(name + " MengDefense dengan " + armor+" Point Armor");
     }
     
     public String getName() {
