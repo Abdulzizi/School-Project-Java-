@@ -1,30 +1,42 @@
 package gamedua;
 
+import java.util.Scanner;
+
 public class Game {
 
     public static void main(String[] args) {
         
-         Player player1 = new Player("Abdul 1", 10, 100);
-         Player player2 = new Player("Jawad 2", 15, 90);
-         
-        player1.run();
-        player2.run();
+        Scanner scanner = new Scanner(System.in);
+        
+         System.out.print("Enter player1 name: ");
+        String player1Name = scanner.nextLine();
+        System.out.print("Enter player1 speed: ");
+        int player1Speed = scanner.nextInt();
+        System.out.print("Enter player1 health point: ");
+        int player1HealthPoint = scanner.nextInt();
+        
+        Player player1 = new Player(player1Name, player1Speed, player1HealthPoint);
+        System.out.println("");
+        
+        scanner.nextLine(); // Kalo Ga ada Input Player 2 name dan player 2 speed numpuk
+        
+        System.out.print("Enter player2 name: ");
+        String player2Name = scanner.nextLine();
+        System.out.print("Enter player2 speed: ");
+        int player2Speed = scanner.nextInt();
+        System.out.print("Enter player2 health point: ");
+        int player2HealthPoint = scanner.nextInt();
+        
+        Player player2 = new Player(player2Name, player2Speed, player2HealthPoint);
         
         player1.showStats();
         player2.showStats();
         
-        player1.attack(player2);
-        player2.defend();
+        Battle battle = new Battle();
+        battle.start(player1, player2);
         
-        player1.showStats();
-        player2.showStats();
-        
-        System.out.println(player2.getName() + " remaining health: " + player2.getHealthPoint());
-        if (player2.isDead()) {
-            System.out.println("\n"+player2.getName() + " is dead.");
-        } else {
-            System.out.println("\n"+player2.getName() + " is still alive.");
-        }
+         player1.showStats();
+         player2.showStats();
         
     }
 }
