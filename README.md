@@ -1,0 +1,1 @@
+Perjalanan Esemka bang
